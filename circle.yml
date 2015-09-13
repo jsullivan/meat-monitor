@@ -1,0 +1,6 @@
+## Customize database setup
+database:
+  override:
+    # replace CircleCI's generated database.yml
+    - bundle exec bin/setup
+
