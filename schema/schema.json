@@ -1,0 +1,138 @@
+{
+  "$schema": "http://interagent.github.io/interagent-hyper-schema",
+  "type": [
+    "object"
+  ],
+  "definitions": {
+    "meat": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Meat",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of meat",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of meat",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/meat/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/meat/definitions/name"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when meat was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when meat was updated",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new meat.",
+          "href": "/meats",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing meat.",
+          "href": "/meats/{(%23%2Fdefinitions%2Fmeat%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing meat.",
+          "href": "/meats/{(%23%2Fdefinitions%2Fmeat%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing meats.",
+          "href": "/meats",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing meat.",
+          "href": "/meats/{(%23%2Fdefinitions%2Fmeat%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/meat/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/meat/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/meat/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/meat/definitions/updated_at"
+        }
+      }
+    }
+  },
+  "properties": {
+    "meat": {
+      "$ref": "#/definitions/meat"
+    }
+  },
+  "description": "A simple API template provided by the Pliny project.",
+  "id": "pliny-template-api",
+  "links": [
+    {
+      "href": "https://api.example.com",
+      "rel": "self"
+    }
+  ],
+  "title": "Pliny Template API"
+}
