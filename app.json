@@ -1,0 +1,10 @@
+{
+  "name": "Meat monitor",
+  "description": "A dashboard for monitoring temperatures while cooking meat",
+  "website": "https://github.com/jsullivan/meat-monitor",
+  "success_url": "/",
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "env": {
+    "RACK_ENV": "production"
+  }
+}
