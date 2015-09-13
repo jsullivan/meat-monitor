@@ -1,5 +1,10 @@
-# Pliny Template app
+# Meat-monitor
 
-This is the template app used by the [Pliny](https://github.com/interagent/pliny) gem.
+## Local setup
 
-For more information please refer to the gem docs.
+```
+$ bundle
+$ cp .env.sample .env
+$ heroku local
+$ open http://localhost:5000
+```
