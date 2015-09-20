@@ -14,6 +14,9 @@ Routes = Rack::Builder.new do
 
   use Pliny::Router do
     # mount all endpoints here
+    mount Endpoints::Meats
+    mount Endpoints::Readings
+    mount Endpoints::Api
   end
 
   # root app; but will also handle some defaults like 404
