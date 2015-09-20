@@ -1,7 +1,7 @@
 ---
 "$schema": http://json-schema.org/draft-04/hyper-schema
-title: FIXME - Meat
-description: FIXME
+title: Meat
+description: A cut of meat to track temperature readings during a cook
 stability: prototype
 strictProperties: true
 type:
@@ -13,28 +13,17 @@ definitions:
     format: uuid
     type:
     - string
-  name:
-    description: unique name of meat
-    readOnly: true
-    type:
-    - string
   identity:
     anyOf:
     - "$ref": "/schemata/meat#/definitions/id"
-    - "$ref": "/schemata/meat#/definitions/name"
   created_at:
     description: when meat was created
     format: date-time
     type:
     - string
-  updated_at:
-    description: when meat was updated
-    format: date-time
-    type:
-    - string
 links:
 - description: Create a new meat.
-  href: "/meats"
+  href: "/api/meats"
   method: POST
   rel: create
   schema:
@@ -42,37 +31,9 @@ links:
     type:
     - object
   title: Create
-- description: Delete an existing meat.
-  href: "/meats/{(%2Fschemata%2Fmeat%23%2Fdefinitions%2Fidentity)}"
-  method: DELETE
-  rel: destroy
-  title: Delete
-- description: Info for existing meat.
-  href: "/meats/{(%2Fschemata%2Fmeat%23%2Fdefinitions%2Fidentity)}"
-  method: GET
-  rel: self
-  title: Info
-- description: List existing meats.
-  href: "/meats"
-  method: GET
-  rel: instances
-  title: List
-- description: Update an existing meat.
-  href: "/meats/{(%2Fschemata%2Fmeat%23%2Fdefinitions%2Fidentity)}"
-  method: PATCH
-  rel: update
-  schema:
-    properties: {}
-    type:
-    - object
-  title: Update
 properties:
   created_at:
     "$ref": "/schemata/meat#/definitions/created_at"
   id:
     "$ref": "/schemata/meat#/definitions/id"
-  name:
-    "$ref": "/schemata/meat#/definitions/name"
-  updated_at:
-    "$ref": "/schemata/meat#/definitions/updated_at"
 id: schemata/meat

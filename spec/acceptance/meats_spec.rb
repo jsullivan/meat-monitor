@@ -13,44 +13,18 @@ describe Endpoints::Meats do
   end
 
   describe 'GET /meats' do
-    it 'returns correct status code and conforms to schema' do
+    it 'returns correct status code' do
       get '/meats'
       assert_equal 200, last_response.status
-      assert_schema_conform
-    end
-  end
-
-  describe 'POST /meats' do
-    it 'returns correct status code and conforms to schema' do
-      header "Content-Type", "application/json"
-      post '/meats', MultiJson.encode({})
-      assert_equal 201, last_response.status
-      assert_schema_conform
     end
   end
 
   describe 'GET /meats/:id' do
-    it 'returns correct status code and conforms to schema' do
-      get "/meats/123"
-      assert_equal 200, last_response.status
-      assert_schema_conform
-    end
-  end
+    it 'returns correct status code' do
+      meat = Meat.create
 
-  describe 'PATCH /meats/:id' do
-    it 'returns correct status code and conforms to schema' do
-      header "Content-Type", "application/json"
-      patch '/meats/123', MultiJson.encode({})
+      get "/meats/#{meat.id}"
       assert_equal 200, last_response.status
-      assert_schema_conform
-    end
-  end
-
-  describe 'DELETE /meats/:id' do
-    it 'returns correct status code and conforms to schema' do
-      delete '/meats/123'
-      assert_equal 200, last_response.status
-      assert_schema_conform
     end
   end
 end

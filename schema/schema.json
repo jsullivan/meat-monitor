@@ -6,8 +6,8 @@
   "definitions": {
     "meat": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
-      "title": "FIXME - Meat",
-      "description": "FIXME",
+      "title": "Meat",
+      "description": "A cut of meat to track temperature readings during a cook",
       "stability": "prototype",
       "strictProperties": true,
       "type": [
@@ -22,20 +22,10 @@
             "string"
           ]
         },
-        "name": {
-          "description": "unique name of meat",
-          "readOnly": true,
-          "type": [
-            "string"
-          ]
-        },
         "identity": {
           "anyOf": [
             {
               "$ref": "#/definitions/meat/definitions/id"
-            },
-            {
-              "$ref": "#/definitions/meat/definitions/name"
             }
           ]
         },
@@ -45,19 +35,12 @@
           "type": [
             "string"
           ]
-        },
-        "updated_at": {
-          "description": "when meat was updated",
-          "format": "date-time",
-          "type": [
-            "string"
-          ]
         }
       },
       "links": [
         {
           "description": "Create a new meat.",
-          "href": "/meats",
+          "href": "/api/meats",
           "method": "POST",
           "rel": "create",
           "schema": {
@@ -68,41 +51,6 @@
             ]
           },
           "title": "Create"
-        },
-        {
-          "description": "Delete an existing meat.",
-          "href": "/meats/{(%23%2Fdefinitions%2Fmeat%2Fdefinitions%2Fidentity)}",
-          "method": "DELETE",
-          "rel": "destroy",
-          "title": "Delete"
-        },
-        {
-          "description": "Info for existing meat.",
-          "href": "/meats/{(%23%2Fdefinitions%2Fmeat%2Fdefinitions%2Fidentity)}",
-          "method": "GET",
-          "rel": "self",
-          "title": "Info"
-        },
-        {
-          "description": "List existing meats.",
-          "href": "/meats",
-          "method": "GET",
-          "rel": "instances",
-          "title": "List"
-        },
-        {
-          "description": "Update an existing meat.",
-          "href": "/meats/{(%23%2Fdefinitions%2Fmeat%2Fdefinitions%2Fidentity)}",
-          "method": "PATCH",
-          "rel": "update",
-          "schema": {
-            "properties": {
-            },
-            "type": [
-              "object"
-            ]
-          },
-          "title": "Update"
         }
       ],
       "properties": {
@@ -111,12 +59,77 @@
         },
         "id": {
           "$ref": "#/definitions/meat/definitions/id"
+        }
+      }
+    },
+    "reading": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Reading",
+      "description": "A temperature reading for a cut of meat",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of reading",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
         },
-        "name": {
-          "$ref": "#/definitions/meat/definitions/name"
+        "temp": {
+          "description": "a temperature reading in Fahrenheit",
+          "readOnly": false,
+          "type": [
+            "integer"
+          ]
         },
-        "updated_at": {
-          "$ref": "#/definitions/meat/definitions/updated_at"
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/reading/definitions/id"
+            }
+          ]
+        },
+        "created_at": {
+          "description": "when reading was created",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new reading.",
+          "href": "/api/meats/{(%23%2Fdefinitions%2Fmeat%2Fdefinitions%2Fidentity)}/readings",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/reading/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/reading/definitions/id"
+        },
+        "temp": {
+          "$ref": "#/definitions/reading/definitions/temp"
+        },
+        "meat_id": {
+          "$ref": "#/definitions/meat/definitions/id"
         }
       }
     }
@@ -124,6 +137,9 @@
   "properties": {
     "meat": {
       "$ref": "#/definitions/meat"
+    },
+    "reading": {
+      "$ref": "#/definitions/reading"
     }
   },
   "description": "A simple API template provided by the Pliny project.",

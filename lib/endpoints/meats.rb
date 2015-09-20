@@ -2,11 +2,12 @@ module Endpoints
   class Meats < Base
     namespace "/meats" do
       before do
-        content_type :json, charset: 'utf-8'
+        content_type :html, charset: 'utf-8'
       end
 
       get do
-        encode []
+        200
+        @meats = Meat.all
       end
 
       post do
@@ -15,15 +16,8 @@ module Endpoints
       end
 
       get "/:id" do
-        encode Hash.new
-      end
-
-      patch "/:id" do
-        encode Hash.new
-      end
-
-      delete "/:id" do
-        encode Hash.new
+        200
+        @meat = Meat[id: params[:id]]
       end
     end
   end
