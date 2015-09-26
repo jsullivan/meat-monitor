@@ -11,6 +11,7 @@ Routes = Rack::Builder.new do
   use Rack::Deflater
   use Rack::MethodOverride
   use Rack::SSL if Config.force_ssl?
+  use Rack::Static, urls: ['/public']
 
   use Pliny::Router do
     # mount all endpoints here

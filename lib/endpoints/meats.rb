@@ -6,8 +6,9 @@ module Endpoints
       end
 
       get do
-        200
         @meats = Meat.all
+        200
+        haml :index
       end
 
       post do

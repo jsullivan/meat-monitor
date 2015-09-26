@@ -11,6 +11,7 @@ module Endpoints
     set :raise_errors, true
     set :root, Config.root
     set :show_exceptions, false
+    set :views, Config.root + '/lib/endpoints/views/'
 
     configure :development do
       register Sinatra::Reloader

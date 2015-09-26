@@ -1,0 +1,14 @@
+!!!
+%html{:lang => "en"}
+  %head
+    / Required meta tags always come first
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}
+
+    %link{:href => "/public/css/main.css", :rel => "stylesheet"}
+  %body
+    = yield
+    / jQuery first, then Bootstrap JS.
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
+    %script{:src => "/public/js/bootstrap.js"}
