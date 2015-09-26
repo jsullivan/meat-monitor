@@ -1,7 +1,6 @@
 !!!
 %html{:lang => "en"}
   %head
-    / Required meta tags always come first
     %meta{:charset => "utf-8"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}
@@ -9,8 +8,13 @@
     %link{:href => "/public/css/main.css", :rel => "stylesheet"}
   %body
     #approot.gradient-primary
-      %h1.text-center Meat Monitor
+      .text-center
+        %img{src: "/public/images/meat.svg"}
+      %h1.inline.text-center Meat Monitor
       = yield
+      %footer
+        .small
+          Meat Printing by H Y P E R M O R G E N from the Noun Project
 
     / jQuery first, then Bootstrap JS.
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}

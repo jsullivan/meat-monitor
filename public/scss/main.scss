@@ -1,6 +1,7 @@
 // This is the main application styling. Use this as a manifest. First pull in
 // bootstrap, and then use any overrides. Maybe to keep this clean import
 
-@import "custom";
 @import "overrides";
 @import "bootstrap";
+@import "custom";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300);

@@ -6,19 +6,9 @@ module Endpoints
       end
 
       get do
-        @meats = Meat.all
-        200
+        @current_meat = Meat.last
+
         haml :index
-      end
-
-      post do
-        status 201
-        encode Hash.new
-      end
-
-      get "/:id" do
-        200
-        @meat = Meat[id: params[:id]]
       end
     end
   end

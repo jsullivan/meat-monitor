@@ -1,25 +1,10 @@
-h1 {
-  color: #fff; }
-
-#approot {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column; }
-
-.gradient-primary {
-  /* Background: */
-  background: #4A90E2;
-  background-image: radial-gradient(at 0 bottom, rgba(118, 72, 160, 0.7) 0, rgba(118, 72, 160, 0) 60%), radial-gradient(at 90% bottom, #523f8c 0, rgba(82, 63, 140, 0) 40%), radial-gradient(at 50% top, rgba(84, 90, 182, 0.6) 0, rgba(84, 90, 182, 0) 75%), radial-gradient(at right top, #794aa2 0, rgba(121, 74, 162, 0) 57%);
-  background-size: auto,auto,100% 1000px,100% 1000px;
-  background-repeat: no-repeat; }
-
 /*!
  * Bootstrap v4.0.0-alpha (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -279,10 +264,10 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: #373a3c;
+  color: #fff;
   background-color: #fff; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -3845,7 +3830,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -3924,7 +3909,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -4635,5 +4620,16 @@ a.bg-danger:focus, a.bg-danger:hover {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+#approot {
+  min-height: 100vh;
+  width: 100%; }
+
+.gradient-primary {
+  /* Background: */
+  background: #4A90E2;
+  background-image: radial-gradient(at 0 bottom, rgba(118, 72, 160, 0.7) 0, rgba(118, 72, 160, 0) 60%), radial-gradient(at 90% bottom, #523f8c 0, rgba(82, 63, 140, 0) 40%), radial-gradient(at 50% top, rgba(84, 90, 182, 0.6) 0, rgba(84, 90, 182, 0) 75%), radial-gradient(at right top, #794aa2 0, rgba(121, 74, 162, 0) 57%);
+  background-size: auto,auto,100% 1000px,100% 1000px;
+  background-repeat: no-repeat; }
 
 /*# sourceMappingURL=main.css.map */

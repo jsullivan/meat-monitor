@@ -1,7 +1,16 @@
 .container
   .row
     .col-xs-12
-      - Meat.each do |meat|
-        = meat.inspect
-        - meat.readings.each do |reading|
-          = reading.inspect
+      %p
+        %strong Cut:
+        = @current_meat.cut
+        %br
+        - @current_meat.readings.each do |reading|
+          %strong Temp:
+          = reading.temp
+
+          %strong Time:
+          = reading.created_at
+
+          %br
+
