@@ -8,7 +8,10 @@
 
     %link{:href => "/public/css/main.css", :rel => "stylesheet"}
   %body
-    = yield
+    #approot.gradient-primary
+      %h1.text-center Meat Monitor
+      = yield
+
     / jQuery first, then Bootstrap JS.
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
     %script{:src => "/public/js/bootstrap.js"}

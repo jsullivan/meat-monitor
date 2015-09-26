@@ -1,5 +1,7 @@
 .container
   .row
     .col-xs-12
-      %h1 Meat monitor
-      %a{href: '#', class: 'btn btn-primary'} TEST BUTTON
+      - Meat.each do |meat|
+        = meat.inspect
+        - meat.readings.each do |reading|
+          = reading.inspect
