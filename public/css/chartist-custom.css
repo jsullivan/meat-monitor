@@ -1,0 +1,9 @@
+.ct-series-a .ct-line {
+  stroke: #fff !important; }
+.ct-series-a .ct-area {
+  /* Set the colour of this series line */
+  fill: black !important;
+  fill-opacity: .2;
+  /* Control the thikness of your lines */ }
+
+/*# sourceMappingURL=chartist-custom.css.map */

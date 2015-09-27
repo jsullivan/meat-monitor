@@ -4632,4 +4632,12 @@ a.bg-danger:focus, a.bg-danger:hover {
   background-size: auto,auto,100% 1000px,100% 1000px;
   background-repeat: no-repeat; }
 
+.ct-series-a .ct-line {
+  stroke: #fff !important; }
+.ct-series-a .ct-area {
+  /* Set the colour of this series line */
+  fill: black !important;
+  fill-opacity: .2;
+  /* Control the thikness of your lines */ }
+
 /*# sourceMappingURL=main.css.map */

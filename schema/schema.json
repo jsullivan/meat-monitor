@@ -110,6 +110,9 @@
           "rel": "create",
           "schema": {
             "properties": {
+              "temp": {
+                "$ref": "#/definitions/reading/definitions/temp"
+              }
             },
             "type": [
               "object"

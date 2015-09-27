@@ -32,7 +32,9 @@ links:
   method: POST
   rel: create
   schema:
-    properties: {}
+    properties:
+      temp:
+        "$ref": "/schemata/reading#/definitions/temp"
     type:
     - object
   title: Create

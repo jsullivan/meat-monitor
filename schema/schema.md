@@ -64,6 +64,12 @@ Create a new reading.
 POST /api/meats/{meat_id}/readings
 ```
 
+#### Optional Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **temp** | *integer* | a temperature reading in Fahrenheit | `42` |
+
 
 #### Curl Example
 
@@ -72,6 +78,7 @@ $ curl -n -X POST https://api.example.com/api/meats/$MEAT_ID/readings \
   -H "Content-Type: application/json" \
  \
   -d '{
+  "temp": 42
 }'
 ```
 
